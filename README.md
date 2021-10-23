@@ -1,1 +1,2 @@
 # shape-ai-bootcamp
+#hacktoberfest
