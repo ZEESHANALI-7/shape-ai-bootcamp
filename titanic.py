@@ -59,7 +59,7 @@ df.corr()
 **parch**: Number of Parents/Children abroad
 """
 
-df['FamilySize'] = df['SibSp']+df['Parch']
+df['FamilySizes'] = df['SibSp']+df['Parch']
 df.drop(['SibSp','Parch'],axis=1, inplace = True)
 df.corr()
 
@@ -68,7 +68,7 @@ df.corr()
 Lets's check if we weather the person was alone or not can affect the survival rate
 """
 
-df['Alone'] = [0 if df['FamilySize'][i]>0 else 1 for i in df.index]
+df['Alone'] = [0 if df['FamilySizes'][i]>0 else 1 for i in df.index]
 df.head()
 
 df.groupby(['Alone'])['Survived'].mean()
